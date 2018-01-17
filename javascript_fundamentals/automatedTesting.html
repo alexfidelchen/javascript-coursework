@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title> Automated Testing with Mocha </title>
+	<!-- Below is mocha.css and mocha.js !-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+	<script>
+		mocha.setup('bdd'); // Looks like you need to set up mocha. 
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+	<script> 
+		let assert = chai.assert;
+	</script>
+</head> 
+<body>
+	<!-- All the tested functions are in the script below !-->
+	<script> 
+		// Ok, so we're going to do a spec on the pow() function. 
+		function pow(x,n){
+		}
+		// Ok, so we're running tests with describe and it. 
+	</script>
+	<!-- the script with tests (describe,it...) where's the
+		test.js file come from? -->
+	<script src="test.js"></script>
+	<!--once testing is done, the test result go inside the 
+		"mocha" div. !-->
+	<div id="mocha"></div>
+	<!-- Ok, so once you set up the test, run it. !-->
+	<script> 
+		mocha.run();
+	</script>
+</body>
+
+</html> 

@@ -1,0 +1,37 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title> Functions </title> 
+</head> 
+<body>
+	<h1> Function expressions and arrows </h1>
+	<script> 
+	function ask(question, yes, no){
+	if (confirm(question)){
+		yes();
+	} else {
+		no();
+	}
+	
+	}
+
+	let question1 = "Do you like Fire Emblem?";
+
+	function agree(){
+		alert("Yeah, Fire Emblem is awesome! I like Marth the best");
+	}
+
+	function beDisappointed(){
+		alert("Oh, that's too bad.");
+	}
+
+	ask(question1, agree, beDisappointed);
+
+	/* Notice that the functions are easy to debug because the functions 
+		are broken up into parts and each part only does one thing. 
+	*/
+	
+	
+	</script>
+</body>
+</html> 

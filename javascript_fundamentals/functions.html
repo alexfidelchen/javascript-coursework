@@ -1,0 +1,29 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title> Functions </title> 
+</head> 
+<body>
+	<h1> Test </h1>
+	<script> 
+		let x = prompt("You're calculating the power of your number! What number do you want to calculate?");
+		let n = prompt("What power of " + x + " do you want to calculate to?");
+		console.log(x,n);
+		function calculateExponent(x,n){
+			if ( x == null || n == null){
+				return "Either x or n is null!";
+			}
+			let power = 1;
+			let counter = 0;
+			while (counter < n){
+				power = power * x;
+				counter++;
+			}
+			return power;
+		}
+		
+		console.log(calculateExponent(x,n));
+
+	</script>
+</body>
+</html> 

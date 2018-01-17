@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title> Symbol Type </title>
+</head> 
+<body>
+	<h1> objectMethodThis </h1>
+	
+	<script> 
+	
+	let calculator = {
+	leftValue : 0,
+	rightValue : 0,
+	
+	read() {
+		this.leftValue = Number(prompt("What's your value for the left value?",0));
+		this.rightValue = Number(prompt("What's the value for the right value?",0));
+	},
+	sum() {
+		return this.leftValue + this.rightValue;
+	},
+	mul() {
+		return this.leftValue * this.rightValue;
+	}
+	
+};
+	
+	calculator.read();
+	alert(calculator.sum());
+	alert(calculator.mul());
+
+	</script> 
+	
+</body>
+
+</html> 

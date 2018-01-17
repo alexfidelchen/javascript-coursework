@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title> Conditional Operators </title> 
+</head> 
+<body>
+	<h1> Test </h1>
+	<script> 
+	let login = prompt("Who's there?");
+	// Good to place vertical indent between if statements?
+	if (login == "Admin"){
+		let password = prompt("Password?");
+		if (password == "TheMaster"){
+			alert("Welcome!");
+		} else if( password == null || password == ""){
+			alert("Canceled");	
+		} else {
+			alert("Wrong Password");
+		}
+		
+	} else if(login == "" || login == null){
+	/* Can't do 
+		else if(login == "" || null)
+		null by itself doesn't make logical sense. 
+	*/
+		alert("Canceled");
+	} else {
+		alert("I don't know you");
+	}
+	</script>
+</body>
+</html> 

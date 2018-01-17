@@ -1,0 +1,52 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title> Automated Testing with Mocha </title>
+	<!-- Below is mocha.css and mocha.js !-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+	<script>
+		mocha.setup('bdd'); // Looks like you need to set up mocha. 
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+	<script> 
+		let assert = chai.assert;
+	</script>
+</head> 
+<body>
+	<!-- All the tested functions are in the script below !-->
+	<script> 
+		// Ok, so we're going to do a spec on the pow() function. 
+		function pow(x,n){
+		if (n < 0) return NaN;
+			let result = 1;
+
+			for (let i = 0; i < n; i++) {
+				result *= x; 
+			}
+			
+			return result;
+		}
+		
+		function ness(x,n){
+			return 8;
+		}
+		
+		// Ok, so we're running tests with describe and it. 
+	</script>
+	<!-- the script with tests (describe,it...) test.js was the 
+	previous code a couple of paragraphs ago.  !-->
+	<script src="specAutomatedTesting.js"></script>
+	<!-- Ok, so within the test.js file, you choose which function 
+		you want to test and what cases you want to test on it. !-->
+	
+	<!--once testing is done, the test result go inside the 
+		"mocha" div. !-->
+	<div id="mocha"></div>
+	<!-- Ok, so once you set up the test, run it. !-->
+	<script> 
+		mocha.run();
+	</script>
+</body>
+
+</html> 

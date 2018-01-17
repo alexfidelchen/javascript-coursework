@@ -1,0 +1,25 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title> Debugging in Chrome </title> 
+</head> 
+<body>
+	<h1> Debugging in Chrome </h1>
+	<script> 
+	function hello(name) {
+	let phrase = `Hello, ${name}!`;
+
+	say(phrase);
+	}
+	
+	debugger;
+
+	function say(phrase) {
+	  alert(`** ${phrase} **`);
+	}
+	
+	hello("Jon");
+
+	</script>
+</body>
+</html> 

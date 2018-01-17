@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title> Object to Primitive conversion </title>
+</head> 
+<body>
+	<h1>  Object to Primitive conversion </h1>
+	
+	<script> 
+	
+	"use strict"
+	
+	let user = {
+		name: "John",
+		money: 1000,
+		eatCookie(){
+			return "yum!";
+		},
+		
+		[Symbol.toPrimitive](hint) {
+			alert("hint: " + hint);
+			return hint == "string" ? this.name : this.money;
+		/* Either returning this current object's name, 
+			or his money. 
+		*/
+		}
+	}
+	
+	/* So the hint is the value the function expects and to
+		convert to. 
+	*/
+	alert(user);
+	
+	let objectToNumber = Number(user);
+	console.log(objectToNumber);
+	// When things get converted Symbol.toPrimative is run.
+	
+	alert("Here comes user2");
+	
+	/* Symbol.toPrimative is a relatively new thing, so we can
+		convert objects the old way if we want: using toString() 
+		and valueOf().
+	*/
+	let user2 = {
+		name: "Marcy",
+		money: 500,
+		toString() {
+			return this.name;
+		}, 
+		// For all non-string conversions, use valueOf
+		valueOf() {
+			return this.money;
+		}
+	}
+	
+	alert(user2); // String
+	alert(Number(user2));
+	alert(user2 + 500); 
+	
+	/* When an object is being converted it will use toString() 
+		or valueOf() to do the conversion. 
+		
+		We can even remove valueOf() and have toString do all the 
+		work
+	*/
+	
+	</script> 
+	
+</body>
+
+</html> 
