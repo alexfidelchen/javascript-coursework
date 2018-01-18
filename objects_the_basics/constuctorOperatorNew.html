@@ -1,0 +1,113 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title> Constructor Operator, New </title>
+</head> 
+<body>
+	<h1>  Constructor Operator, New </h1>
+	
+	<script> 
+	
+	function Calculator() {
+		this.a;
+		this.b;
+		this.read = function() {
+			this.a = Number(prompt("What's the value of a?"));
+			// Remember prompt always returns a number. 
+			this.b = Number(prompt("What's the value of b?"));
+			alert(this.a);
+			alert(this.b);
+		}
+		/* Looks like you have to use function expression syntax 
+			to write methods inside constructors. 
+		*/
+		this.sum = function() {
+			if ( this.a == null || this.b == null){
+				return alert("Either a or b doesn't have a value, please fill in a and b with the read() method!");
+			}
+			return this.a + this.b;
+		}
+		
+		this.mul = function() {
+			if ( this.a == null || this.b == null){
+				return alert("Either a or b doesn't have a value, please fill in a and b with the read() method!");
+			}
+			return this.a * this.b;
+		}
+		
+	}
+	
+	function Accumulator( startingValue ) {
+		this.value = startingValue,
+		this.read = function() {
+			add = Number(prompt("What number do you want to add to the stating value?"));
+			// Remember prompt always returns a number. 
+			// When you're in a constructor don't for the "this" value. 
+			this.value = this.value + add;
+			return this.value;
+		}
+
+	}
+	
+	/*
+	let calculator = new Calculator();
+	calculator.read();
+	console.log(calculator.sum());
+	console.log(calculator.mul());
+	
+	let accumulator = new Accumulator(1);
+	console.log(accumulator.read());
+	console.log(accumulator.read());
+	*/
+	
+	function CalculatorExtendable() {
+		this.a = 0; // Zero is a placeholder value. 
+		this.b = 0;
+		
+		/* To ensure that you can use more than plus and minus, the 
+			trick is to place all the operators into a object.
+		
+		this.add = (a,b) => a + b;
+		this.sub = (a,b) => a - b;
+		
+		*/
+		
+		// Hidden member
+		methods = {
+			"+" : function(a,b) {
+				return a + b;
+			},
+			"-" : function(a,b) {
+				return a - b;
+			}
+		}
+		
+		this.calculate = function(string) {
+			// Assuming that the string is in the format "NUMBER operator NUMBER"
+			let parts = string.split(" "); // Split by space. 
+			a = Number(parts[0]);
+			b = Number(parts[2]);
+			
+			return methods[parts[1]](a,b); 
+		}
+		
+		this.addOperator = function(operatorName,functionality) {
+			methods[operatorName] = functionality;
+		}
+		
+	}
+	
+	calculatorExtend = new CalculatorExtendable();
+	console.log(calculatorExtend);
+	console.log(calculatorExtend.calculate("12 - 17"));
+	calculatorExtend.addOperator("*", (a,b) => a * b);
+	console.log(calculatorExtend.calculate("3 * -8"));
+	// Do exponents
+	calculatorExtend.addOperator("**", (a,b) => a ** b);
+	console.log(calculatorExtend.calculate("3 ** 2"));
+	
+	</script> 
+	
+</body>
+
+</html> 
