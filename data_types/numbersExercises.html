@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title> Numbers </title>
+</head> 
+<body>
+	<h1>  Numbers </h1>
+	
+	<script> 
+
+	/* EXERCISE 1 
+	let a = +prompt("What's the value for a?",0);
+	let b = +prompt("And b?", 0);
+	
+	 In case of imprecisions from storing decimal 
+	 In case of imprecisions from storing decimal 
+		numbers into memory. 
+	
+	
+	if ( (a > 0 && a < 1) || (b > 0 && b < 1)) {
+		let sum = a + b; 
+		alert(sum.toFixed(5));
+		
+	} else {
+		alert(a + b);
+	}
+	*/
+	
+	/* EXERCISE 3 */
+	
+	function readNumber() {
+		let number = "change me";
+		let finalNumber = checkNumber(number);
+		return finalNumber;
+		
+	}
+	
+	function checkNumber(number) {
+		
+		while(!isFinite(number)) {
+			number = prompt("What number do you want?","ok");
+		}
+		
+		if (number === null || number === ""){
+			return null;
+		}
+		
+		return number;
+		
+	}
+	
+	let finalNumber = readNumber();
+	alert(finalNumber);
+	</script> 
+	
+	
+	
+</body>
+
+</html> 
