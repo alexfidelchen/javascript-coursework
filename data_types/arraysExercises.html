@@ -1,0 +1,50 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title> Arrays </title>
+</head> 
+<body>
+	<h1>  Arrays </h1>
+	
+	<script> 
+	
+		function sumInput() {
+		    let input = "hi";
+			let inputType = 0;
+			let sumArray = [];
+								
+			
+			while (true) {
+				input = prompt(`What value do you want to add? Please type in a non-number,
+								an empty string or press "cancel" to add up the current numbers.`,0);
+					if (input === "" || input === null || !isFinite(input)) {
+					/* Makes more sense to use this solution than the previous one, 
+					becuase prompts always return a string. 
+					*/
+						break;
+					}
+					sumArray[sumArray.length] = +input;
+			}
+			
+			return getSum(sumArray);
+		}
+		
+		function getSum(array) {
+			let sum = 0;
+			for (num of array) {
+			    sum = sum + num;
+			}
+			return sum;
+		}
+		
+		console.log(sumInput());
+
+	
+		
+	</script> 
+	
+	
+	
+</body>
+
+</html> 
