@@ -24,7 +24,7 @@ firstMap.set(2, "Roger Ebert");
 	
 	Unlike objects, keys are not converted to strings. 
 */
-firstMap.set('1', 9);
+firstMap.set('1', 9); 
 firstMap.set(1, "Mon mon mon");
 firstMap.set(true, "This is true");
 console.log(firstMap);
