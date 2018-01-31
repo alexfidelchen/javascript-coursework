@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title> Functions expressions and arrows </title> 
+</head> 
+<body>
+	<h1> Function expressions and arrows </h1>
+	<script> 
+	/* EXERCISE 
+	
+	function ask(question, yes, no) {
+	  if (confirm(question)) yes()
+	  else no();
+	}
+
+	ask(
+	  "Do you agree?",
+	  function() { alert("You agreed."); },
+	  function() { alert("You canceled the execution."); }
+	);
+	
+	The function expressions are the functions in the parameter,
+	so I need to just change that. 
+	*/
+	
+	function ask(question, yes, no) {
+	  if (confirm(question)) yes()
+	  else no();
+	}
+
+	let agree = () => {
+						alert("You agreed.");
+						return;
+						}
+	let cancel = () => {
+						alert("You canceled the execution.");
+						return;
+						}
+	ask( "Do you agree?",agree,cancel);
+	
+	</script>
+</body>
+</html> 
