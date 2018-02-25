@@ -1,0 +1,88 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>The Global Object</title> 
+</head> 
+<body>
+	<script>
+	"use strict"
+	
+		/* The global object is the object we start out with when we write
+	a script. The object is already initialized and we can use it
+	at the start of the script. The cool thing about the global
+	object is that we don't have to reference the object directly 
+	when we call its methods. 
+	*/
+
+	/* So again, the object we start object with in the browser is 
+	window. 
+	*/
+	
+	window.alert("Good Morning");
+	
+	/* The cool thing about the window object is you don't have 
+		to reference it when you call its methods. 
+		
+		You don't have to reference window when you use its methods. 
+	*/
+	
+	alert("No reference to window");
+	
+	/* The global object also allows you to define functions and define 
+		variables using "var". 
+	*/
+
+	/* The global object also holds all the var variables and functions no 
+		inside a bracket. So you can call a function or non-let variable 
+		not inside bracket with window. 
+	*/
+	
+	var test1 = 1; 
+	
+	console.log(window.test1); 
+	/* test1 is written to the window object so we can call it from 
+		the object. 
+	*/
+	
+	/* Node's global object is global, but its rarely used. 
+	*/
+	
+	/* Generally, its not a good idea to call the global object 
+		directly, but there are some uses for it. 
+		
+		You can check if a certain variable exists. 
+	*/
+	
+	if (window.XMLHttpRequest) {
+		alert(window.XMLHttpRequest);
+		console.log(window.XMLHttpRequest);
+		
+	}
+	/* Remember, if the window.XMLHttpRequest has any non-zero value 
+		or equivalent, window.XMLHttpRequest is true. 
+		
+		Looks like XMLHttpRequest doesn't show you what's inside.  
+	*/
+	
+	/* Remember, each window and tab in a browser has a global 
+		window variable. It's possible to embed a window inside 
+		a window or tab using <iframe>. JavaScript allows windows 
+		from the same website to access variables from each other. 
+	*/
+	
+	/* So generally, when you use the this keyword, its been inside the 
+		an object you created. If you use this outside outside of any 
+		bracket, this will refer to the global object. 
+		
+		If you're not using strict mode, using this inside a function 
+		will get you the window object instead of undefined. 
+	*/
+	
+	console.log(this);
+	function f(){
+		alert(this);
+	}
+	f();
+	</script>
+</body>
+</html> 
