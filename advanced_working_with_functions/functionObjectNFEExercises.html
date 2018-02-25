@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <script>
+    'use strict';
+    function sum(a) {
+    
+      let currentSum = a;
+    
+      function f(b) {
+        currentSum += b;
+        return f;
+      }
+    
+      f.toString = function() {
+        return currentSum;
+      };
+    
+      return f;
+    }
+    
+    console.log(sum(1)(2).toString()); 
+	/* Interesting, alert() converts functions into strings so
+		the toString method gets you the sum of the numbers. 
+	*/
+  </script>
+</body>
+
+</html>

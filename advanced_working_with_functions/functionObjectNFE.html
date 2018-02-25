@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <script>
+    'use strict';
+    function f(sayHi = function() {}) {
+      alert(sayHi.name); // sayHi (works!)
+    }
+    
+    f();
+	let x = 1;
+	console.log(Function.prototype);
+	
+	function ask(question, ...handlers) {
+	// Creates an array of questions.
+	  let isYes = confirm(question);
+	  // Run isYes. 
+
+	  for(let handler of handlers) {
+		if (handler.length == 0) {
+		  if (isYes) handler();
+		} else {
+		  handler(isYes);
+		}
+	  }
+	  /* If the function doesn't have parameters, run 
+		the handler function with not parameter, if it 
+		does, run the handler function with the parameters. 
+	*/
+
+	}
+
+// for positive answer, both handlers are called
+// for negative answer, only the second one
+ask("Question?", () => alert('You said yes'), result => alert(result));
+  </script>
+</body>
+
+</html>
